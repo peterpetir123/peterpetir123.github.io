@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeterPetir — Professional Vibe Coder</title>
+  <meta name="description" content="Personal portfolio of PeterPetir — Professional Vibe Coder architecting systems, low-level Linux containers, cryptography, and autonomous AI agents.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">peterpetir<span>.dev</span></div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>vibe coding in progress</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="hero">
+        <div class="pill-badge">Professional Vibe Coder</div>
+        <h1>PeterPetir</h1>
+        <p class="hero-subtitle">
+          Saya tidak mengetik sintaks baris demi baris seperti coder konvensional. Saya merancang arsitektur sistem, memimpin armada AI agent otonom, dan mengeksekusi produk nyata.
+        </p>
+        <div class="hero-bio">
+          "Fokus saya adalah menjadi nahkoda dan arsitek: menentukan arah, menguji keamanan, memvalidasi hasil di perangkat fisik, dan membiarkan AI mengeksekusi kode teknis berkecepatan tinggi."
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/peterpetir123" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span>GitHub</span> ↗
+          </a>
+          <a href="https://t.me/PeterPetir" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span>Telegram</span> ↗
+          </a>
+          <a href="https://x.com/peterpetir09" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span>X (Twitter)</span> ↗
+          </a>
+          <a href="https://instagram.com/petirpetir09" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span>Instagram</span> ↗
+          </a>
+          <a href="https://www.tiktok.com/@peterpetir09" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span>TikTok</span> ↗
+          </a>
+        </div>
+      </section>
+
+      <!-- Flagship Project -->
+      <section>
+        <div class="section-label">The Flagship · Privacy & Systems</div>
+        <div class="flagship-card">
+          <div class="card-top">
+            <h2 class="card-title">Velora OS</h2>
+            <span class="badge-flagship">IN ACTIVE DEVELOPMENT · BUILD v24</span>
+          </div>
+          <p class="card-desc">
+            Sistem operasi userspace Linux mandiri dan brankas file terenkripsi untuk smartphone tanpa akses root (Zero-Root). Dirancang untuk memberikan privasi ekstra bagi pengguna dari lapisan kernel hingga antarmuka grafis.
+          </p>
+          <div class="card-desc" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            • <strong>Core:</strong> Debian 13 (Trixie ARM64) diisolasi via kontainer PRoot pada Samsung Galaxy S24 FE (Android 16 / 16 KB Page-Size).<br>
+            • <strong>Desktop Shell:</strong> Engine Rust mandiri (<code style="font-family: var(--font-mono); color: #fff;">tiny_skia</code> + <code style="font-family: var(--font-mono); color: #fff;">x11rb</code>), 60 FPS, memori ultra-efisien &lt; 18 MB RAM.<br>
+            • <strong>Encrypted Vault:</strong> Chunk AEAD AES-256-GCM 64 KiB, derivasi kunci Argon2id teruji, dan zero-leak encrypted index.
+          </div>
+          <div class="tech-tags">
+            <span class="tag">Rust</span>
+            <span class="tag">Android 16 (API 36)</span>
+            <span class="tag">Debian 13 ARM64</span>
+            <span class="tag">PRoot Userspace</span>
+            <span class="tag">AES-256-GCM</span>
+            <span class="tag">Argon2id</span>
+            <span class="tag">Zero-Root Privacy</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other Selected Projects -->
+      <section>
+        <div class="section-label">Selected Works & Experiments</div>
+        <div class="projects-grid">
+
+          <!-- CraftChain SMP -->
+          <div class="project-card">
+            <div>
+              <div class="project-title-row">
+                <span class="project-name">CraftChain SMP</span>
+                <span class="badge-coming-soon">COMING SOON</span>
+              </div>
+              <p class="card-desc">
+                Infrastruktur ekonomi token GameFi berbasis Solana SVM untuk server Minecraft SMP vanilla. Menghubungkan aktivitas in-game player ke transaksi on-chain terverifikasi.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Solana SVM</span>
+              <span class="tag">SPL Token</span>
+              <span class="tag">Minecraft SMP</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Node.js API</span>
+            </div>
+          </div>
+
+          <!-- FlyBrain 3D -->
+          <div class="project-card">
+            <div>
+              <div class="project-title-row">
+                <a href="https://github.com/peterpetir123/flybrain3d" target="_blank" rel="noopener noreferrer" class="project-link-header">
+                  <span class="project-name">FlyBrain 3D</span>
+                </a>
+                <span class="arrow-icon">↗</span>
+              </div>
+              <p class="card-desc">
+                Viewer 3D interaktif connectome saraf lalat buah (<em>Drosophila melanogaster</em>). Eksperimen memetakan sirkuit neuron biologis ke simulasi agent logika.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Three.js</span>
+              <span class="tag">WebGL</span>
+              <span class="tag">Biological Connectome</span>
+              <span class="tag">Interactive 3D</span>
+            </div>
+          </div>
+
+          <!-- Agent Tooling & MCP -->
+          <div class="project-card">
+            <div>
+              <div class="project-title-row">
+                <span class="project-name">Autonomous Agent Tooling (MCP)</span>
+                <span class="tag" style="border: none; padding: 0;">AI Infra</span>
+              </div>
+              <p class="card-desc">
+                Peralatan kustom berbasis Model Context Protocol (MCP) untuk menghubungkan agen AI otonom ke metrik media sosial real-time, API data eksternal, dan pipeline eksekusi multi-agent.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Model Context Protocol</span>
+              <span class="tag">Multi-Agent Orchestration</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tool Engineering</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Vibe Coder Principles -->
+      <section>
+        <div class="section-label">How I Operate · Vibe Coder Method</div>
+        <div class="principles-grid">
+          <div class="principle-box">
+            <div class="principle-num">01 / ARCHITECT</div>
+            <div class="principle-title">Desain Sebelum Kode</div>
+            <p class="principle-desc">Merancang arsitektur sistem, alur enkripsi, batas izin, dan spesifikasi sebelum menugaskan AI untuk menulis baris kode.</p>
+          </div>
+          <div class="principle-box">
+            <div class="principle-num">02 / ORCHESTRATE</div>
+            <div class="principle-title">Nahkoda Multi-Agent</div>
+            <p class="principle-desc">Memperlakukan model AI sebagai anak buah pelaksana berkecepatan tinggi, menguji hipotesis, dan membandingkan trade-off opsi secara kritis.</p>
+          </div>
+          <div class="principle-box">
+            <div class="principle-num">03 / VERIFY</div>
+            <div class="principle-title">Bukti di Atas Asumsi</div>
+            <p class="principle-desc">Hasil dianggap selesai hanya jika terbukti berfungsi di perangkat keras nyata (Android, Linux, on-chain testnet), bukan cuma selesai di chat.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-left">
+        © 2026 <span>PeterPetir</span> · Professional Vibe Coder
+      </div>
+      <div class="footer-socials">
+        <a href="https://t.me/PeterPetir" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://x.com/peterpetir09" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://instagram.com/petirpetir09" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.tiktok.com/@peterpetir09" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://github.com/peterpetir123" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
