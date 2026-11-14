@@ -282,6 +282,13 @@
         return hex && hex.length >= 12 ? hex.slice(0, 8) + '...' + hex.slice(-4) : '';
       }
 
+      function formatSize(bytes) {
+        if (typeof bytes !== 'number' || !(bytes > 0)) return '';
+        var gib = bytes / (1024 * 1024 * 1024);
+        if (gib >= 1) return gib.toFixed(2) + ' GiB';
+        return (bytes / (1024 * 1024)).toFixed(0) + ' MiB';
+      }
+
       if (shaBtn && shaLabel) {
         shaBtn.addEventListener('click', function () {
           var sha = shaBtn.getAttribute('data-sha') || '';
@@ -299,27 +306,40 @@
       }
 
       fetch('https://api.github.com/repos/peterpetir123/velora-ota/releases/latest', {
+        cache: 'no-cache',
         headers: { Accept: 'application/vnd.github+json' }
       })
         .then(function (res) { return res.ok ? res.json() : null; })
         .then(function (rel) {
           if (!rel || !rel.tag_name) return;
           var tag = String(rel.tag_name);
-          var apk = Array.isArray(rel.assets)
-            ? rel.assets.find(function (a) { return a && a.name === 'velora-gate1c.apk'; })
-            : null;
+          var assets = Array.isArray(rel.assets) ? rel.assets : [];
+          var apk = assets.find(function (a) { return a && a.name === 'velora-gate1c.apk'; })
+            || assets.find(function (a) { return a && /\.apk$/i.test(a.name || ''); });
           if (badge) badge.textContent = 'IN ACTIVE DEVELOPMENT · ' + tag;
           if (rel.html_url && releaseLink) releaseLink.href = rel.html_url;
           if (apk) {
-            if (apk.browser_download_url && apkBtn) apkBtn.href = apk.browser_download_url;
-            if (typeof apk.size === 'number' && apkMeta) {
-              var gib = (apk.size / (1024 * 1024 * 1024)).toFixed(2);
-              apkMeta.textContent = tag + ' · ' + gib + ' GiB';
+            if (apkBtn) {
+              apkBtn.href = apk.name
+                ? 'https://github.com/peterpetir123/velora-ota/releases/latest/download/' + encodeURIComponent(apk.name)
+                : (apk.browser_download_url || apkBtn.href);
+              if (apk.name) apkBtn.setAttribute('download', apk.name);
             }
-            if (apk.digest && String(apk.digest).indexOf('sha256:') === 0 && shaBtn && shaLabel) {
-              var hex = String(apk.digest).slice(7);
-              shaBtn.setAttribute('data-sha', hex);
-              shaLabel.textContent = 'SHA-256: ' + formatShortSha(hex);
+            if (apkMeta) {
+              var sizeStr = formatSize(apk.size);
+              apkMeta.textContent = sizeStr ? (tag + ' · ' + sizeStr) : tag;
+            }
+            if (shaBtn && shaLabel) {
+              if (apk.digest && String(apk.digest).indexOf('sha256:') === 0) {
+                var hex = String(apk.digest).slice(7);
+                shaBtn.setAttribute('data-sha', hex);
+                shaLabel.textContent = 'SHA-256: ' + formatShortSha(hex);
+                shaBtn.disabled = false;
+              } else {
+                shaBtn.removeAttribute('data-sha');
+                shaLabel.textContent = 'SHA-256: lihat Release Notes';
+                shaBtn.disabled = true;
+              }
             }
           }
         })
