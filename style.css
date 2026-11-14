@@ -21,6 +21,16 @@
   padding: 0;
 }
 
+::selection {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-primary);
@@ -229,6 +239,132 @@ section {
   gap: 0.45rem;
 }
 
+/* Flagship APK Download / Install Bar */
+.apk-install-panel {
+  border-top: 1px solid var(--border);
+  padding-top: 1.15rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.apk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.download-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.6rem 1.05rem;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.download-btn-primary .btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.download-btn-primary:hover {
+  background-color: #e4e4e4;
+  transform: translateY(-1px);
+}
+
+.download-btn-primary .btn-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #404040;
+  border-left: 1px solid #cfcfcf;
+  padding-left: 0.6rem;
+  white-space: nowrap;
+}
+
+.download-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  background-color: var(--tag-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hover);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.download-btn-secondary:hover {
+  background-color: #222222;
+  border-color: #777777;
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.btn-icon-sm {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.apk-meta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.apk-req {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.sha-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.sha-copy-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background-color: var(--tag-bg);
+}
+
 .tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -378,6 +514,23 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+  .apk-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .download-btn-primary,
+  .download-btn-secondary {
+    width: 100%;
+  }
+  .download-btn-primary {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.7rem 1rem;
+  }
+  .download-btn-primary .btn-meta {
+    border-left: none;
+    padding-left: 0;
   }
   footer {
     flex-direction: column;
