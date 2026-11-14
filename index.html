@@ -66,12 +66,12 @@
             <span class="badge-flagship" id="velora-version-badge">IN ACTIVE DEVELOPMENT · v42-rel32</span>
           </div>
           <p class="card-desc">
-            Sistem operasi userspace Linux mandiri dan brankas file terenkripsi untuk smartphone tanpa akses root (Zero-Root). Dirancang untuk memberikan privasi ekstra bagi pengguna dari lapisan kernel hingga antarmuka grafis.
+            Lingkungan desktop Linux Debian (ARM64) mandiri dan brankas berkas terenkripsi dalam satu APK Android tanpa akses root (Zero-Root). Dilengkapi X11 server bawaan, desktop shell Rust kustom, manajer berkas, dan pembaruan OTA.
           </p>
           <div class="card-desc" style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-            • <strong>Core:</strong> Debian 13 (Trixie ARM64) diisolasi via kontainer PRoot pada Samsung Galaxy S24 FE (Android 16 / 16 KB Page-Size).<br>
-            • <strong>Desktop Shell:</strong> Engine Rust mandiri (<code style="font-family: var(--font-mono); color: #fff;">tiny_skia</code> + <code style="font-family: var(--font-mono); color: #fff;">x11rb</code>), 60 FPS, memori ultra-efisien &lt; 18 MB RAM.<br>
-            • <strong>Encrypted Vault:</strong> Chunk AEAD AES-256-GCM 64 KiB, derivasi kunci Argon2id teruji, dan zero-leak encrypted index.
+            • <strong>Core &amp; Runtime:</strong> Rootfs Debian 13 (Trixie ARM64) di ruang pengguna Android via <code style="font-family: var(--font-mono); color: #fff;">PRoot</code> dan X11 server <code style="font-family: var(--font-mono); color: #fff;">libXlorie.so</code> (kompatibel Android 8.0+ ARM64 &amp; 16 KB page-size).<br>
+            • <strong>Desktop Shell:</strong> Compositor &amp; window manager Rust mandiri (<code style="font-family: var(--font-mono); color: #fff;">x11rb</code> + <code style="font-family: var(--font-mono); color: #fff;">tiny-skia</code> + <code style="font-family: var(--font-mono); color: #fff;">fontdue</code>) dengan File Manager, minimize/maximize/resize jendela, Taskbar, pengaturan resolusi layar, dan 10 bahasa UI.<br>
+            • <strong>Encrypted Vault:</strong> Brankas AES-256-GCM (chunk 64 KiB), derivasi kunci Argon2id, sub-kunci per-berkas HKDF-SHA256, indeks nama file terenkripsi, dan pembersihan kunci RAM (<code style="font-family: var(--font-mono); color: #fff;">zeroize</code>) saat terkunci.
           </div>
 
           <!-- Direct APK Install / Download Actions -->
@@ -130,12 +130,13 @@
 
           <div class="tech-tags">
             <span class="tag">Rust</span>
-            <span class="tag">Android 16 (API 36)</span>
+            <span class="tag">Android 8.0+ (ARM64)</span>
+            <span class="tag">16 KB Page-Size</span>
             <span class="tag">Debian 13 ARM64</span>
             <span class="tag">PRoot Userspace</span>
+            <span class="tag">X11 / libXlorie</span>
             <span class="tag">AES-256-GCM</span>
             <span class="tag">Argon2id</span>
-            <span class="tag">Zero-Root Privacy</span>
           </div>
         </div>
       </section>
