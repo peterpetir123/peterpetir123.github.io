@@ -146,6 +146,54 @@
         <div class="section-label">Selected Works & Experiments</div>
         <div class="projects-grid">
 
+          <!-- Qwen3.5-9B Shrunk + Extra Engine -->
+          <div class="project-card project-card--new">
+            <span class="badge-new-project">NEW PROJECT</span>
+            <div>
+              <div class="project-title-row">
+                <a href="https://github.com/peterpetir123/qwen35-local-lab" target="_blank" rel="noopener noreferrer" class="project-link-header">
+                  <span class="project-name">Qwen3.5-9B Shrunk + Extra Engine</span>
+                </a>
+              </div>
+              <p class="card-desc">
+                Bedah biner GGUF dan mesin penalaran lokal <strong>100% CPU-only (0 GPU, RAM 7.6 GiB)</strong> untuk model Qwen3.5-9B — memangkas ukuran model dari <strong>4.60 GiB → 3.49 GiB</strong> tanpa merusak 32 layer berpikirnya, sekaligus mendongkrak akurasi coding Python dari <strong>0% polos → 90.0% (27/30 soal)</strong>.
+              </p>
+              <div class="card-desc" style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1.15rem;">
+                • <strong>Selective GGUF Surgery:</strong> Kompresi khusus tensor <code style="font-family: var(--font-mono); color: #fff;">output.weight</code> (<code style="font-family: var(--font-mono); color: #fff;">BF16 1940 MiB → Q6_K 795.7 MiB</code>) lewat <code style="font-family: var(--font-mono); color: #fff;">libggml-base.so</code>; 426 tensor lain &amp; 66 metadata disalin utuh bit-demi-bit (hemat 1.12 GiB).<br>
+                • <strong>Extra Engine v3 Verifier:</strong> Mematikan loop <code style="font-family: var(--font-mono); color: #fff;">&lt;think&gt;</code>, instrumentasi <code style="font-family: var(--font-mono); color: #fff;">ast</code> assert, deteksi <em>infinite loop</em> baris eksak (<code style="font-family: var(--font-mono); color: #fff;">signal.alarm</code>), pola invarian non-bocor, dan <em>Fresh-Design Reset</em>.<br>
+                • <strong>Benchmark Jujur 30 Soal:</strong> 10/10 soal awal + 17/20 soal baru (<em>unseen</em>) lulus di Intel Core i5 tanpa GPU (1.25–2.35 t/s).
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://huggingface.co/PeterPetir/Qwen3.5-9B-Shrunk-OutQ6K-GGUF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn-primary"
+                >
+                  <span>Hugging Face</span>
+                  <span class="project-btn-meta">Model 3.49 GiB ↗</span>
+                </a>
+                <a
+                  href="https://github.com/peterpetir123/qwen35-local-lab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn-secondary"
+                >
+                  <span>GitHub</span>
+                  <span>Code &amp; Benchmark ↗</span>
+                </a>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">GGUF Surgery</span>
+              <span class="tag">libggml / C API</span>
+              <span class="tag">Qwen3.5-9B (3.49 GiB)</span>
+              <span class="tag">CPU-Only (0 GPU)</span>
+              <span class="tag">Python Verifier</span>
+              <span class="tag">90% (27/30)</span>
+            </div>
+          </div>
+
           <!-- Quorix AI -->
           <div class="project-card">
             <div>
