@@ -163,6 +163,74 @@
                 • <strong>Extra Engine v3 Verifier:</strong> Mematikan loop <code style="font-family: var(--font-mono); color: #fff;">&lt;think&gt;</code>, instrumentasi <code style="font-family: var(--font-mono); color: #fff;">ast</code> assert, deteksi <em>infinite loop</em> baris eksak (<code style="font-family: var(--font-mono); color: #fff;">signal.alarm</code>), pola invarian non-bocor, dan <em>Fresh-Design Reset</em>.<br>
                 • <strong>Benchmark Jujur 30 Soal:</strong> 10/10 soal awal + 17/20 soal baru (<em>unseen</em>) lulus di Intel Core i5 tanpa GPU (1.25–2.35 t/s).
               </div>
+
+              <!-- Head-to-Head Comparison Scale vs Qwen3.8-27B -->
+              <div class="bench-compare">
+                <div class="bench-compare-header">
+                  <span>Skala Perbandingan Lokal (Intel i5 · RAM 7.6 GiB · 0 GPU)</span>
+                  <span class="bench-compare-vs">vs Qwen3.8-27B</span>
+                </div>
+
+                <div class="bench-metric">
+                  <div class="bench-metric-top">
+                    <span class="bench-metric-label">Kecepatan Generasi (CPU-Only)</span>
+                    <span class="bench-metric-delta">16×–29× lebih cepat</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag is-ours">9B Shrunk</span>
+                    <div class="bench-track"><div class="bench-fill is-ours" style="width: 100%;"></div></div>
+                    <span class="bench-val is-ours">1.25–2.35 t/s</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag">Qwen3.8 27B</span>
+                    <div class="bench-track"><div class="bench-fill" style="width: 4%;"></div></div>
+                    <span class="bench-val">0.081 t/s (34 mnt/160t)</span>
+                  </div>
+                </div>
+
+                <div class="bench-metric">
+                  <div class="bench-metric-top">
+                    <span class="bench-metric-label">Ukuran File &amp; Beban RAM (lebih kecil lebih ringan)</span>
+                    <span class="bench-metric-delta">3.1× lebih kecil</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag is-ours">9B Shrunk</span>
+                    <div class="bench-track"><div class="bench-fill is-ours" style="width: 32%;"></div></div>
+                    <span class="bench-val is-ours">3.49 GiB (muat di RAM)</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag">Qwen3.8 27B</span>
+                    <div class="bench-track"><div class="bench-fill" style="width: 100%;"></div></div>
+                    <span class="bench-val">10.87 GiB (swap SSD)</span>
+                  </div>
+                </div>
+
+                <div class="bench-metric">
+                  <div class="bench-metric-top">
+                    <span class="bench-metric-label">Akurasi Coding Python (Verifier vs Mentah)</span>
+                    <span class="bench-metric-delta">0% → 90.0%</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag is-ours">9B + Engine v3</span>
+                    <div class="bench-track"><div class="bench-fill is-ours" style="width: 90%;"></div></div>
+                    <span class="bench-val is-ours">90.0% (27/30 teruji)</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag">Qwen3.8 27B*</span>
+                    <div class="bench-track"><div class="bench-fill is-ref" style="width: 82%;"></div></div>
+                    <span class="bench-val">~73.5–88.2%* (gagal 1-shot lokal)</span>
+                  </div>
+                  <div class="bench-bar-row">
+                    <span class="bench-model-tag">9B Polos</span>
+                    <div class="bench-track"><div class="bench-fill" style="width: 2%;"></div></div>
+                    <span class="bench-val">0.0% (macet &lt;think&gt;)</span>
+                  </div>
+                </div>
+
+                <div class="bench-footnote">
+                  *Referensi klaim repo Qwen3.8-27B di GPU (~73.5–88.2%). Di uji langsung laptop lokal (0 GPU), 27B mentah butuh 34,2 menit untuk 160 token dan gagal <code>try=1</code> pada soal analog multi-delimiter, sedangkan 9B Shrunk + Extra Engine lulus <code>try=1</code>.
+                </div>
+              </div>
               <div class="project-actions">
                 <a
                   href="https://huggingface.co/PeterPetir/Qwen3.5-9B-Shrunk-OutQ6K-GGUF"
