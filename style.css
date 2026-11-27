@@ -720,6 +720,9 @@ footer {
 }
 
 .footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
