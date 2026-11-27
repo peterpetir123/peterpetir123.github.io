@@ -163,6 +163,19 @@ h1 {
   transform: translateY(-1px);
 }
 
+.social-btn-support {
+  background: var(--text-primary);
+  color: var(--bg-main);
+  border-color: var(--text-primary);
+  font-weight: 600;
+}
+
+.social-btn-support:hover {
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+  color: var(--bg-main);
+}
+
 /* Sections Common */
 section {
   margin-bottom: 4rem;
