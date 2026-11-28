@@ -155,6 +155,56 @@
         <div class="section-label">Selected Works & Experiments</div>
         <div class="projects-grid">
 
+          <!-- HAFS — Harness Agent From Scratch -->
+          <div class="project-card project-card--new">
+            <span class="badge-new-project">NEW PROJECT</span>
+            <div>
+              <div class="project-title-row">
+                <a href="https://github.com/peterpetir123/hafs" target="_blank" rel="noopener noreferrer" class="project-link-header">
+                  <span class="project-name">HAFS — Harness Agent From Scratch (Skill + MCP)</span>
+                </a>
+              </div>
+              <p class="card-desc">
+                Platform terminal sekaligus <strong>Skill &amp; MCP Server</strong> agar developer maupun AI agent lain (OpenCode, Claude Code, Antigravity, Hermes, Cursor) bisa merancang, menguji, dan membangun <strong>harness agent deklaratif (YAML)</strong> mereka sendiri dari nol — gratis di fase <code style="font-family: var(--font-mono); color: #fff;">dev</code> lokal sebelum promosi ke <code style="font-family: var(--font-mono); color: #fff;">prod</code> (BYOK).
+              </p>
+              <div class="card-desc" style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1.15rem;">
+                • <strong>Agent Skill &amp; MCP Server:</strong> Paket siap pakai <code style="font-family: var(--font-mono); color: #fff;">SKILL.md</code> + <code style="font-family: var(--font-mono); color: #fff;">hafs mcp-serve</code> (stdio JSON-RPC 2.0) berisi 7 tool MCP (<code style="font-family: var(--font-mono); color: #fff;">hafs_init_harness</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_validate_harness</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_create_skill</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_list_modes</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_replay_trace</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_check_promotion</code>, <code style="font-family: var(--font-mono); color: #fff;">hafs_get_schema</code>).<br>
+                • <strong>Live <code>/</code> CLI, Modes &amp; Sub-Agents:</strong> Konsol interaktif (<code style="font-family: var(--font-mono); color: #fff;">hafs chat</code>) dengan popup menu <code style="font-family: var(--font-mono); color: #fff;">/</code> real-time, mode bawaan <code style="font-family: var(--font-mono); color: #fff;">plan</code> (read-only), <code style="font-family: var(--font-mono); color: #fff;">build</code>, dan <code style="font-family: var(--font-mono); color: #fff;">orkes</code> (orkestrator + <code style="font-family: var(--font-mono); color: #fff;">call_subagent</code>), progressive <code style="font-family: var(--font-mono); color: #fff;">SKILL.md</code>, serta klien MCP stdio/HTTP.<br>
+                • <strong>Sandbox, Offline Replay &amp; Promotion Gate:</strong> Isolasi <code style="font-family: var(--font-mono); color: #fff;">bash</code> lewat <code style="font-family: var(--font-mono); color: #fff;">bubblewrap</code> + <code style="font-family: var(--font-mono); color: #fff;">prlimit</code>, replay trace JSONL offline (0 token LLM), eval &amp; cross-model compare, serta Promotion Gate yang memblokir <code style="font-family: var(--font-mono); color: #fff;">prod</code> sebelum <code style="font-family: var(--font-mono); color: #fff;">dev</code> lulus bersih (48/48 test teruji).
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/peterpetir123/hafs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn-primary"
+                >
+                  <span>GitHub</span>
+                  <span class="project-btn-meta">Repo &amp; MCP Server ↗</span>
+                </a>
+                <a
+                  href="https://github.com/peterpetir123/hafs/blob/main/SKILL.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn-secondary"
+                >
+                  <span>SKILL.md</span>
+                  <span>Pasang ke Agent ↗</span>
+                </a>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Python 3.11+</span>
+              <span class="tag">MCP Server (stdio)</span>
+              <span class="tag">Agent Skill (SKILL.md)</span>
+              <span class="tag">Modes (plan/build/orkes)</span>
+              <span class="tag">Sub-Agents</span>
+              <span class="tag">Bubblewrap Sandbox</span>
+              <span class="tag">Offline Replay</span>
+              <span class="tag">Promotion Gate</span>
+            </div>
+          </div>
+
           <!-- Qwen3.5-9B Shrunk + Extra Engine -->
           <div class="project-card project-card--new">
             <span class="badge-new-project">NEW PROJECT</span>
